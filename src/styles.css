@@ -1,0 +1,206 @@
+html,
+body,
+.root {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background-color: tomato;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: transparent;
+    border: solid 1px gray;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 40px    
+}
+
+.subGenres {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.subGenres-item {
+    margin: 10px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba(65, 151, 182, 0.81);
+}
+
+.subGenres-item input {
+    background-color: black;
+}
+
+.jumbo {
+    color: black;
+    text-decoration: none;
+}
+
+.breadcrumbs {
+    margin: 30px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+}
+
+.breadcrumbs-spacer {
+    margin: 0 5px;
+}
+
+.breadcrumbs-item {
+    background-color: tomato;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.breadcrumbs-visited {
+    background-color: forestgreen;
+}
+
+.breadcrumbs-item:hover {
+    color: black;
+    border: solid 2px gray;
+}
+
+.actions {
+    margin: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.actions-item {
+    background-color: dodgerblue;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+.actions-item:hover {
+    color: black;
+    border: solid 2px gray;
+}
+
+.guidance {
+    display: flex;
+    justify-content: center;
+}
+
+.guidance-box {
+    font-family: serif;
+    padding: 5;
+    border: solid 5px black;
+    font-size: 75px;
+    background-color: white;
+    min-width: 140px;
+    margin: 0 10px;
+    margin-top: 50px;
+}
+
+.productions {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.production-item {
+    margin: 10px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgba(65, 151, 182, 0.81);
+}
+
+.slider-root {
+    position: relative;    
+}
+
+.slider {
+    position: absolute;
+    left: 0;
+    width: 460px;
+}
+
+
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+}
+   
+.stars-outer::before {
+    font-size: 100px;
+    content: "\f006 \f006 \f006 \f006 \f006";
+}
+   
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+   
+.stars-inner::before {
+    font-size: 100px;
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+    width: 200px;
+}
+.rating { 
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    flex-direction: row-reverse;
+  }
+  
+  .rating > input { display: none; } 
+  .rating > label:before { 
+    margin: 5px;
+    font-size: 10em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+  }
+  
+  .rating > .half:before { 
+    content: "\f089";
+    position: absolute;
+  }
+  
+  .rating > label { 
+    color: #ddd; 
+   float: right; 
+  }
+  
+  /***** CSS Magic to Highlight Stars on Hover *****/
+  
+  .rating > input:checked ~ label, /* show gold star when clicked */
+  .rating:not(:checked) > label:hover, /* hover current star */
+  .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+  
+  .rating > input:checked + label:hover, /* hover current star when changing rating */
+  .rating > input:checked ~ label:hover,
+  .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+  .rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
